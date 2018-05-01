@@ -27,6 +27,7 @@ class MigrateModule(PupyModule):
         group.add_argument('-c', '--create', metavar='<exe_path>',
                             help='create a new process and inject into it')
         group.add_argument('pid', nargs='?', type=int, help='pid')
+	#group.add_argument('name', nargs='?', help='proc name')
         self.arg_parser.add_argument('-k', '--keep', action='store_true' ,help='migrate into the process but create a new session and keep the current pupy session running')
 	self.arg_parser.add_argument('-t', '--timeout', type=int, default=30, help='time in seconds to wait for the connection')
 
